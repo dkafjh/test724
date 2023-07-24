@@ -1,0 +1,47 @@
+* 깃: 문서 버전 관리 프로그램
+- 깃 설치하기 
+https://git-scm.com/download/win
+64-bit Git for Windows Setup.
+-> 학원, 본인 홈 컴퓨터 
+
+
+- 깃 교안  : https://leeeungyoung.github.io/
+
+
+- 깃 저장소 개념
+작업트리(로컬:폴더) a.txt  
+-> 스테이지 : (스테이징) git add "파일명"
+-> 저장소(버전을 만들어 저장하는 곳) : (커밋) git commit -m "커밋 메세지"
+
+
+- 깃허브(원격저장소)에 연결하기
+-> 깃허브에 리포지토리를 만들기
+
+
+[집에서 할 작업]
+https://leeeungyoung.github.io/
+(교안 주소)
+
+작업순서)
+1. 깃 설치 후 비주얼 스튜디오 코드에 폴더 설정 후 터미널에서 명령 입력하기
+
+2.  환경설정
+git config --global user.name "깃허브계정이름"
+git config --global user.email "깃허브계정주소"
+
+3. 초기화
+git init
+
+4. 깃허브 리포지토리에 연결
+git remote add origin 복사한 리포지토리주소
+
+5. 깃허브의 리포지토리를 내려받기
+git clone 복사한리포지토리주소 
+
+-> 파일 수정(a.txt), 3,4 라인에 집에서 한 일과를 쓰기! -> 아침에 몇시에 일어나서 집에서 깃 작업을 하고 있어요~~!!
+
+-> 스팅이징 -> 커밋 ->  푸시(깃 허브에 올린다!!)
+
+
+
+
