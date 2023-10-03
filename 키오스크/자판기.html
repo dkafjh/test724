@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8" />
+	<style>
+		#menu {
+			width: 400px; height: 400px;
+		}
+		#menu > div {
+			float: left;
+			width: 180px; height: 180px;
+			margin-top: 6px; margin-right: 6px;
+			line-height: 180px;
+			text-align: center;
+			border: 2px solid black;
+			background-color: yellow;
+			cursor: pointer;
+		}
+		#state {
+			width: 400px; height: 50px;
+		}
+		#cal {
+			width: 400px; height: 50px;
+		}
+		a {
+			text-decoration: none;
+		}
+		#result {
+			width: 400px; height: 50px;
+			margin-top: 10px;
+			text-align: center;
+			line-height: 50px;
+			border: 2px solid black;
+			background: cyan;
+		}
+	</style>
+	<script>
+		let dataArea1 = null;
+		let dataArea2 = null;
+		let result = null;
+
+		window.onload = function() {
+			dataArea1 = document.querySelector('#select1');
+			dataArea2 = document.querySelector('#select2');
+			result = document.querySelector('#result');
+		}
+			function add(data) {
+				if(dataArea1.value == null || dataArea1.value == '') {
+					dataArea1.value = data
+				} else {
+					dataArea2.value = data;
+				} 
+			}
+
+			function calc(f) {
+				const sum = Number(dataArea1.value) + Number(dataArea2.value);
+				const money = f.money.value;
+				const cal = Number(money) - sum;
+				if (cal < 0) {
+					result.innerHTML = '지불금액이 부족합니다.';
+				} else {
+					result.innerHTML = `거스름돈 ${cal}`;
+				}
+			}
+	</script>
+	<title>자판기</title>
+</head>
+<body>
+	<div id="menu">
+		<div id="item1" onclick="add(1000)">콜라 1000원</div>
+		<div id="item2" onclick="add(1200)">사이다 1200원</div>
+		<div id="item3" onclick="add(1500)">비타500 1500원</div>
+		<div id="item4" onclick="add(1800)">박카스 1800원</div>
+	</div>
+	<div id="state">
+		<input type="text" id="select1" disabled="disabled">
+		<input type="text" id="select2" disabled="disabled">
+	</div>
+	<div id="cal">
+		<form>
+			<input type="text" name="money">
+			<input type="button" value="계산" onclick="calc(this.form)">
+		</form>
+	</div>
+	<div id="result"></div>
+</body>
+</html>

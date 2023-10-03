@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+body{
+    position: relative;
+    height: 1600px;
+}
+
+div img {
+    margin: 0 auto;
+    width: 40%;
+    display: block;
+    transition: all 0.3s ease-in-out;
+}
+
+p{
+    text-align: center;
+}
+
+header {
+    background-color: rgb(255, 208, 0);
+    padding: 1% 10%;
+}
+
+main {
+    position: relative;
+}
+
+.select-btn {
+    display: flex;
+    width: 100%;
+    height:100%;
+    background-color: #222222c2;
+    position: absolute;
+    z-index: 777;
+    transition: all 0.3s ease-in-out;
+}
+
+.none{
+    display: none;
+}
+
+
+.select-btn button{
+    cursor: pointer;
+    transform: translate(0, 20%);
+    line-height: 100%;
+    color: #fff;
+    font-size: 3em;
+    width: 50%;
+    height: 100vh;
+}
+
+.select-btn button:hover {
+    font-weight: bolder;
+}
+
+.select-btn button:first-child{
+    background-color: #076814;
+}
+
+.select-btn button:last-child{
+    background-color: #dd2626;
+}
+
+
+.gnb{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.gnb a{
+    font-size: 1.7em;
+    font-weight: bolder;
+    color: #076814;
+}
+
+.gnb a:hover{
+    font-size: 1.7em;
+    font-weight: bolder;
+    color: #000;
+}
+
+
+#classicMenu{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#specialMenu{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#sideMenu{
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    padding-top: 2%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-between;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+#total {
+    padding: 10px;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    bottom: 0;
+    background-color: rgb(190, 190, 190);
+}
+
+#modal {
+    background-color: #58585891;
+    display: none;
+    z-index: 99999;
+    transform: translate(-50%,-50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+#cal{
+    position: relative;
+    background-color: #fff;
+    margin: 10%;
+}
+
+#cal > p {
+    color: #000;
+}
+
+#close-btn {
+    top: 0;
+    right: 1%;
+    position: absolute;
+    background:none;
+    border: 0;
+    font-size: 3em;
+}
