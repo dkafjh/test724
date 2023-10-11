@@ -1,8 +1,11 @@
 @charset "utf-8";
 
+@import url("https://font.elice.io/css?family=Elice+DX+Neolli");
+
 body{
     position: relative;
     height: 1600px;
+    overflow-X: hidden;
 }
 
 div img {
@@ -19,6 +22,19 @@ p{
 header {
     background-color: rgb(255, 208, 0);
     padding: 1% 10%;
+}
+
+h1 {
+    height: 50px;
+    text-align: center;
+    font-size: 3em;
+    margin-top: 2%;
+    font-family: 'Elice DX Neolli';
+    color: #fff;
+}
+
+h1 img{
+    height: 100%;
 }
 
 main {
@@ -39,8 +55,21 @@ main {
     display: none;
 }
 
+.select-btn h2 {
+    padding-top: 30px;
+    height: 8%;
+    width: 100%;
+    font-size: 2em;
+    position: absolute;
+    color: #656565;
+    left: 0;
+    top: 5%;
+    text-align: center;
+    background-color: #fff;
+}
 
 .select-btn button{
+    display: block;
     cursor: pointer;
     transform: translate(0, 20%);
     line-height: 100%;
@@ -54,12 +83,21 @@ main {
     font-weight: bolder;
 }
 
-.select-btn button:first-child{
+
+.select-btn #eat{
     background-color: #076814;
+}
+
+#eat:hover {
+    background-color: #06460f;
 }
 
 .select-btn button:last-child{
     background-color: #dd2626;
+}
+
+.select-btn button:last-child:hover{
+    background-color: #a02121;
 }
 
 
@@ -69,6 +107,10 @@ main {
     justify-content: space-between;
 }
 
+.gnb > li {
+    position: relative;
+}
+
 
 .gnb a{
     font-size: 1.7em;
@@ -76,10 +118,35 @@ main {
     color: #076814;
 }
 
-.gnb a:hover{
+.gnb li::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+    width: 0;
+    height: 10%;
+    background-color: #076814;
+    transition: all 0.3s ease-in-out;
+}
+
+.onEvent::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10%;
+    width: 100%;
+    height: 10%;
+    background-color: #076814;
+}
+
+.gnb li:hover a{
     font-size: 1.7em;
     font-weight: bolder;
     color: #000;
+}
+
+.gnb li:hover::after{
+    width: 100%;
 }
 
 
