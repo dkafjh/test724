@@ -73,10 +73,12 @@ main {
     cursor: pointer;
     transform: translate(0, 20%);
     line-height: 100%;
-    color: #fff;
+    color: white;
+    font-weight: bold;
     font-size: 3em;
     width: 50%;
     height: 100vh;
+    text-shadow: 3px 3px 3px 3px black;
 }
 
 .select-btn button:hover {
@@ -85,6 +87,7 @@ main {
 
 
 .select-btn #eat{
+    background: url(../images/forhere.png) no-repeat bottom;
     background-color: #076814;
 }
 
@@ -93,6 +96,8 @@ main {
 }
 
 .select-btn button:last-child{
+    background: url(../images/takeout.png) no-repeat center ;
+    background-position: 70%  80%;
     background-color: #dd2626;
 }
 
@@ -149,18 +154,80 @@ main {
     width: 100%;
 }
 
-.menu {
-    height: 100vh;
+.flex-box {
     position: absolute;
     left: 0;
     top: 0;
-    padding-top: 100px;
+    padding-top: 10%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 20%;
     justify-content: space-between;
     margin: 0 auto;
     background-color: #fff;
-    transition: all 0.5s ease-in-out;
+}
+
+.menu > div {
+    cursor: pointer;
+}
+
+.menu p {
+    margin-top: 30px;
+    font-size: 1.9em;
+}
+
+#addTopping {
+    width: 100%;
+    height: 200vh;
+    position: relative;
+    z-index: 9999;
+    font-size: 2em;
+    font-weight: bold;
+    background-color: #8080806f;
+    display: none;
+}
+
+#addTopping h2 {
+    margin: 2% 0;
+    text-align: center;
+    font-size: 3em;
+}
+
+#addTopping > div{
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, 0);
+    background-color: #fff;
+}
+
+
+
+#addTopping .toppinglist{
+    padding: 5% 1%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 2%;
+    grid-row-gap: 50px;
+}
+
+#addTopping .toppinglist img {
+    width: 80%;
+}
+
+#addTopping .toppinglist p {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.3em;
+}
+
+#addTopping button {
+    display: block;
+    margin: 0 auto;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    padding: 0 1%;
 }
 
 #total {
@@ -190,6 +257,7 @@ main {
     background-color: #fff;
     margin: 10%;
 }
+
 
 #cal > p {
     color: #000;

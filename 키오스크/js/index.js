@@ -3,7 +3,6 @@ window.onload = function(){
     const selectBtns = document.querySelectorAll('.select-btn > button');
     const modalText = document.querySelector('#howeat'); // 모달 창의 텍스트 요소
     const modal = document.querySelector('#modal');
-    const gnbBtn = document.querySelector('.gnb a')
     
     selectBtns.forEach(function(button) {
         button.addEventListener('click', function () {
@@ -23,11 +22,17 @@ window.onload = function(){
         }
     });
 
-    const closeBtn = document.getElementById('close-btn');
-    closeBtn.addEventListener('click' , ()=>{
-        modal.style.display = 'none'
-    })
-
+    const closeBtn = document.querySelectorAll('.close-btn');
+    closeBtn.forEach(button => {
+        button.addEventListener('click', function() {
+            if (this.textContent === 'X') {
+                modal.style.display = 'none';
+            } else {
+                this.parentNode.parentNode.style.display = 'none';
+            }
+        });
+    });
+    
     const gnbLinks = document.querySelectorAll('.gnb a');
     gnbLinks.forEach(function (link) {
         link.addEventListener('click', function (event) {
@@ -68,6 +73,30 @@ window.onload = function(){
         'specialMenuBtn': 'specialMenu',
         'sideMenuBtn': 'sideMenu'
     };
+
+    const $classicMenu = document.querySelectorAll('#classicMenu > div > div');
+    const $specialMenu = document.querySelectorAll('#specialMenu > div > div');
+    const $addtopping = document.getElementById('addTopping');
+
+
+    function addToppings(){
+        if(!confirm('주문 목록에 담으시겠습니까?')){
+
+        } else {
+            if(confirm('토핑을 추가하시겠습니까?')){
+                modalText.text
+                $addtopping.style.display = 'block'
+            }
+        }
+    }
+
+    $classicMenu.forEach(function(idx){
+        idx.addEventListener('click', addToppings)
+    })
+
+    $specialMenu.forEach(function(idx){
+        idx.addEventListener('click', addToppings)
+    })
 
     // 초기에 모든 메뉴 숨기기
 

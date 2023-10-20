@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="select-btn">
-        <h2>안녕하세요! 먹고가실건지 포장해가실건지 선택해주세요!</h2>
+        <h2>안녕하세요 피자스쿨입니다! 좋은하루 보내세요!</h2>
         <button id="eat">먹고가기</button>
         <button id="takeOut">포장하기</button>
     </div>
@@ -25,40 +25,53 @@
         </nav>
     </header>
     <main>
+        <div>
+        </div>
         <div id="classicMenu" class="menu">
-            <div id="cheese"><img src="./images/치즈피자.jpg" alt="cheesepiza"><p>치즈피자 8900원</p></div>
-            <div id="peperoni"><img src="./images/페퍼로니 피자 new (1).png" alt="pepepiza"><p>페페로니 피자 9900원</p></div>
-            <div id="combi"><img src="./images/콤비네이션 피자.jpg" alt="combipiza"><p>콤비네이션 피자 10900원</p></div>
-            <div id="potato"><img src="./images/포테이토피자.jpg" alt="potatopiza"><p>포테이토 피자 11900원</p></div>
-            <div id="bulgogi"><img src="./images/불고기피자.jpg" alt="bullgogipiza"><p>불고기 피자 11900원</p></div>
+            <div class="flex-box">
+                <div id="cheese" data-price="8900"><img src="./images/치즈피자.jpg" alt="cheesepiza"><p>치즈피자 8900원</p></div>
+                <div id="peperoni" data-price="9900"><img src="./images/페퍼로니 피자 new (1).png" alt="pepepiza"><p>페페로니 피자 9900원</p></div>
+                <div id="combi" data-price="10900"><img src="./images/콤비네이션 피자.jpg" alt="combipiza"><p>콤비네이션 피자 10900원</p></div>
+                <div id="potato" data-price="11900"><img src="./images/포테이토피자.jpg" alt="potatopiza"><p>포테이토 피자 11900원</p></div>
+                <div id="bulgogi" data-price="11900"><img src="./images/불고기피자.jpg" alt="bullgogipiza"><p>불고기 피자 11900원</p></div>
+            </div>
         </div>
         <div id="specialMenu" class="menu">
-            <div id="buldak"><img src="./images/피자-_불닭고구마피자 (1).jpg" alt="불닭고구마피자"><p>불닭고구마 피자 13,900원</p></div>
-            <div><img src="./images/핫치킨피자.jpg" alt="핫치킨피자"><p>핫치킨 피자 10,900원</p></div>
-            <div><img src="./images/비프퀘사디아 피자.jpg" alt="비프퀘사디아 피자"><p>비프퀘사디아 피자 13,900원</p></div>
-            <div><img src="./images/트러플머쉬룸피자_800 (1).jpg" alt="트러플머쉬룸피자"><p>트러플머쉬룸피자 13,900원</p></div>
-            <div><img src="./images/고구마피자.jpg" alt="고구마피자"><p>고구마 피자 10,900원</p></div>
+            <div class="flex-box">
+                <div id="buldak" data-price="13900"><img src="./images/피자-_불닭고구마피자 (1).jpg" alt="불닭고구마피자"><p>불닭고구마 피자 13,900원</p></div>
+                <div data-price="10900"><img src="./images/핫치킨피자.jpg" alt="핫치킨피자"><p>핫치킨 피자 10,900원</p></div>
+                <div data-price="13900"><img src="./images/비프퀘사디아 피자.jpg" alt="비프퀘사디아 피자"><p>비프퀘사디아 피자 13,900원</p></div>
+                <div data-price=""><img src="./images/트러플머쉬룸피자_800 (1).jpg" alt="트러플머쉬룸피자"><p>트러플머쉬룸피자 13,900원</p></div>
+                <div data-price="10900"><img src="./images/고구마피자.jpg" alt="고구마피자"><p>고구마 피자 10,900원</p></div>
+            </div>
         </div>
         <div id="sideMenu" class="menu">
-            <div><img src="./images/크림치즈볼 (1).jpg" alt="크림치즈볼"><p>크림 치즈볼</p></div>
-            <div><img src="./images/로제치즈볼.jpg" alt="로제치즈볼"><p>로제 치즈볼</p></div>
-            <div><img src="./images/슈크림볼.jpg" alt="슈크림볼"><p>슈크림볼</p></div>
-            <div><img src="./images/사이드_오지치즈그라탕_메뉴사진.jpg" alt="오지치즈그라탕"><p>오지치즈그라탕</p></div>
-            <div><img src="./images/사이드_치즈오븐스파게티 (1).jpg" alt="치즈오븐스파게티"><p>치즈오븐스파게티</p></div>
-            <div><img src="./images/사이드_치킨텐더.jpg" alt=""><p>치킨텐더</p></div>
-            <div><img src="./images/사이드_치킨스틱 &윙 (1).jpg" alt="치킨스틱,윙"><p>치킨스틱&윙</p></div>
+            <div class="flex-box">
+                <div data-price="4900"><img src="./images/크림치즈볼 (1).jpg" alt="크림치즈볼"><p>크림 치즈볼 4900원</p></div>
+                <div data-price="4900"><img src="./images/로제치즈볼.jpg" alt="로제치즈볼"><p>로제 치즈볼 4900원</p></div>
+                <div data-price="4900"><img src="./images/슈크림볼.jpg" alt="슈크림볼"><p>슈크림볼 4900원</p></div>
+                <div data-price="6900"><img src="./images/사이드_오지치즈그라탕_메뉴사진.jpg" alt="오지치즈그라탕"><p>오지치즈그라탕 6900원</p></div>
+                <div data-price="6900"><img src="./images/사이드_치즈오븐스파게티 (1).jpg" alt="치즈오븐스파게티"><p>치즈오븐스파게티 6900원</p></div>
+                <div data-price="5900"><img src="./images/사이드_치킨텐더.jpg" alt=""><p>치킨텐더 5900원</p></div>
+                <div data-price="6900"><img src="./images/사이드_치킨스틱 &윙 (1).jpg" alt="치킨스틱,윙"><p>치킨스틱&윙 6900원</p></div>
+            </div>
         </div>
     
     
         <div id="addTopping">
-            <div>세블락 소시지</div>
-            <div>블랙 올리브</div>
-            <div>페퍼로니</div>
-            <div>로인햄</div>
-            <div>베이컨</div>
-            <div>고구마무스</div>
-            <div>치즈토핑</div>
-            <button>확인</button>
+            <div>
+                <h2>토핑 추가</h2>
+                <ul class="toppinglist">
+                    <li data-price="1000"><img src="./images/세블락소시지2.jpg" alt=""><p>세블락 소세지</p></li>
+                    <li data-price="1000"><img src="./images/블랙올리브 (1).jpg" alt=""><p>블랙올리브</p></li>
+                    <li data-price="1000"><img src="./images/페퍼로니 (1).jpg" alt=""><p>페페로니</p></li>
+                    <li><img src="./images/로인햄.jpg" alt=""><p>로인햄</p></li>
+                    <li><img src="./images/베이컨.jpg" alt=""><p>베이컨</p></li>
+                    <li><img src="./images/고구마무스_2 (1).jpg" alt=""><p>고구마무스</p></li>
+                    <li><img src="./images/치즈토핑 (1).jpg" alt=""><p>치즈토핑</p></li>
+                </ul>
+                <button class="close-btn">확인</button>
+            </div>
         </div>
 
         <div id="total">
@@ -75,7 +88,7 @@
                 <input type="text" name="money">
                 <input type="button" value="계산하기">
             </form>
-            <button id="close-btn">X</button>
+            <button class="close-btn">X</button>
         </div>
     </div>
 </body>
