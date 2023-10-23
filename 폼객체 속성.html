@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>form 객체 속성</title>
+    <script>
+		function check() {
+			var frm = document.frm;
+			if(!frm.agree1.checked) {
+				alert("약관에 동의하세요!");
+				frm.agree1.focus();
+				return false; // 클릭 후 넘기지 않기 위해 사용
+			}
+
+			if(!frm.agree2.checked) {
+				alert("개인정보에 동의하세요!");
+				frm.agree2.focus();
+				return false; // 클릭 후 넘기지 않기 위해 사용
+			}
+			location.href = "http://yeibi.dothome.co.kr"
+		}
+
+		function allCheck() {
+			with(document.frm) { // with(반복되는 객체명), 동일한 객체로 시작되면 with문을 사용하여 한 번만 작성할 수 있다.
+				if(all.checked) { // 전체선택 폼이 체크 여부
+					for(let i = 0; i < frm.length; i++) {
+						if(elements[i].type == "checkbox") {
+							elements[i].checked = true;
+						}
+					}
+				}	else {
+					for(let i = 0; i < frm.length; i++) {
+						if(elements[i].type == "checkbox") {
+							elements[i].checked = false;
+						}
+					}
+				}
+			}
+		}
+    </script>
+</head>
+<body>
+    <form action="#" name="frm" method="POST">
+		<div>
+			<input type="checkbox" name="all" onclick="allCheck()">
+			<label for="all">전체동의</label> 
+		</div>    
+        
+		<div>
+			<textarea cols="30" rows="10">약관동의</textarea><br>
+			<input type="checkbox" name="agree1" id="agree1">
+			<label for="agree1">약관동의</label>
+		</div>
+		<div>
+			<textarea cols="30" rows="10">개인정보</textarea><br>
+			<input type="checkbox" name="agree2" id="agree2">
+			<label for="agree2">개인정보동의</label>
+		</div>
+		
+		<input type="button" value="동의" onclick="check()">
+		<input type="reset" value="취소">
+
+		
+    </form>    
+</body>
+</html>

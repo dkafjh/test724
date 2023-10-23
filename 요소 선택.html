@@ -1,0 +1,35 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8" />
+	<title>요소 선택 메소드</title>
+	<script>
+		window.onload = function() {
+			const content = document.getElementById('content');
+			const fruit = document.getElementsByClassName('fruit');
+			const sp = document.getElementsByTagName('span');
+			console.log(sp);
+			fruit[1].style.color = 'red';
+
+			// sp[2].onclick = () => { // 화살표 함수 내에서 this 인식 못함.
+			// 	this.style.backgroundColor = 'orange';
+			// }
+			sp[2].onclick = e => { // 화살표 함수 내에서 this 인식 못함.
+				e.currentTarget.style.backgroundColor = 'orange';
+			}
+		}
+	</script>
+</head>
+<body>
+	<div id="content">
+		<div name="fruit">
+			<h2 class="fruit">과일</h2>
+			<span>바나나</span><br>
+			<span>코코넛</span><br>
+			<h2 class="fruit">좋아하는 과일</h2>
+			<span>사과</span><br>
+			<span>오렌지</span><br>
+		</div>
+	</div>
+</body>
+</html>

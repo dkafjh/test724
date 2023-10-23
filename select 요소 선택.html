@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function() {
+            const frm = document.frm;
+            frm.site.add(new Option('야후', 'yahoo'));// select option추가
+            frm.site.length = 3; // select option 삭제
+        }
+        function siteLink() {
+            const frm = document.frm;
+            const linkValue = frm.site.options[frm.site.selectedIndex].value;
+            if (linkValue) {
+                window.open(linkValue, '_blank');
+            }
+        }
+    </script>
+    <title>select 요소 선택</title>
+</head>
+<body>
+    <form action="#" name="frm">
+        <select name="site" id="site" onchange="siteLink()">
+            <option value="">포털사이트</option>
+            <option value="https://www.naver.com">네이버</option>
+            <option value="https://www.daum.net">다음</option>
+            <option value="https://www.nate.com">다음</option>
+        </select>
+        <input type="button" value="확인" onclick="siteLink()">
+    </form>
+</body>
+</html>

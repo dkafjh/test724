@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        window.onload = function() {
+            function calcBtn(e) {
+                if (e.target.tagName == 'BUTTON') {
+                    const z1 = document.querySelector('#z1').value;
+                    const z2 = document.querySelector('#z2').value;
+
+                    let result;
+                    switch (e.target.innerText) {
+                        case '+': result = Number(z1) + Number(z2);
+                        break;
+                        case '-': result = Number(z1) - Number(z2);
+                        break;
+                        case '*': result = Number(z1) * Number(z2);
+                        break;
+                        case '/': result = Number(z1) / Number(z2);
+                        break;
+                        case '%': result = Number(z1) % Number(z2);
+                        break;
+                        default: result = '';
+                    }
+                    document.querySelector('#result').value = result;
+                }
+            }
+            document.querySelector('.box').addEventListener('click', calcBtn, false);
+
+        }
+    </script>
+    <title>계산기 프로그램</title>
+    <style>
+        * { 
+            margin: 0; 
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .box {
+            width: 500px;
+            position: absolute;
+            left: 50%; top:50%;
+            box-sizing: border-box;
+            transform: translate(-50%, -50%);
+        }
+
+        .box fieldset {
+            padding: 50px 20px;
+            border: 1px solid #000;
+        }
+
+        label {
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        input {
+            width: 290px; height: 34px;
+            border:1px solid #000;
+            margin-left:20px;
+        }
+
+        .btn button {
+            width: 60px; height: 60px;
+            font-size: 22px; font-weight: 600;
+            border: none;
+            margin: 10px 0;
+            outline: none;
+            background-color: #ccc;
+            cursor: pointer;
+        }
+    
+        .btn button:last-child {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <form action="">
+            <fieldset>
+                <legend>계산기</legend>
+                <label for="">첫번째 입력값 : </label>
+                <input type="text" id="z1">
+                <label for="">두번째 입력값 : </label>
+                <input type="text" id="z2">
+                <div class="btn">
+                    <button type="button" id="a1">+</button>
+                    <button type="button" id="s1">-</button>
+                    <button type="button" id="m1">*</button>
+                    <button type="button" id="d1">/</button>
+                    <button type="button" id="w1">%</button>
+                    <button type="button" id="clear">clear</button>
+                </div>
+                <label for="">결과 값 출력   :</label>
+                <input type="text" id="result">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
