@@ -127,7 +127,7 @@ main {
 
 
 .gnb a{
-    font-size: 1.7em;
+    font-size: 175%;
     font-weight: bolder;
     color: #076814;
 }
@@ -277,6 +277,29 @@ footer{
     z-index: 999;
     bottom: 0;
     background-color: rgb(190, 190, 190);
+}
+
+#orderMenu {
+    width: 20%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#orderMenu input {
+    width: 70%;
+    font-size: 2em;
+    text-align: left;
+}
+
+#orderMenu input:nth-child(even) {
+    width: 30%;
+    text-align: center;
+}
+
+#total button {
+    font-size: 1.6em;
+    margin-top: 20px;
+    padding: 1%;
 }
 
 #modal {

@@ -1,49 +1,3 @@
-const ClassicData = {
-    "치즈피자": {
-        "name": "치즈피자",
-        "price": 8900
-    },
-    "페페로니피자": {
-        "name": "페페로니피자",
-        "price": 9900
-    },
-    "콤비네이션피자": {
-        "name": "콤비네이션피자",
-        "price": 10900
-    },
-    "포테이토피자": {
-        "name": "포테이토피자",
-        "price": 11900
-    },
-    "불고기피자": {
-        "name": "불고기피자",
-        "price": 11900
-    }
-};
-
-const SpecialData = {
-    "불닭고구마피자": {
-        "name": "불닭고구마피자",
-        "price": 13900
-    },
-    "핫치킨피자": {
-        "name": "핫치킨피자",
-        "price": 10900
-    },
-    "비프퀘사디아피자": {
-        "name": "비프퀘사디아피자",
-        "price": 13900
-    },
-    "트러플머쉬룸피자": {
-        "name": "트러플머쉬룸피자",
-        "price": 13900
-    },
-    "고구마피자": {
-        "name": "고구마피자",
-        "price": 10900
-    }
-};
-
 window.onload = function() {
     const selectBtns = document.querySelectorAll('.select-btn > button');
     const modalText = document.querySelector('#howeat'); // 모달 창의 텍스트 요소
@@ -102,39 +56,81 @@ window.onload = function() {
         'sideMenuBtn': 'sideMenu'
     };
     
-    const $classicMenu = document.querySelectorAll('#classicMenu .flex-box > div');
-    const $specialMenu = document.querySelectorAll('#specialMenu .flex-box > div');
+    const pizzaMenu = document.querySelectorAll('.menu .flex-box div');
     const $addtopping = document.getElementById('addTopping');
-    
-    $classicMenu.forEach(function(item) {
+    const sideMenu = document.querySelectorAll('.sidemenu .flex-box div')
+
+    sideMenu.forEach(function(item) {
         item.addEventListener('click', function() {
-            if (!confirm('주문 목록에 담으시겠습니까?')) {
-                // 사용자가 주문 목록에 담지 않을 경우
-            } else {
-                if (confirm('토핑을 추가하시겠습니까?')) {
-                    // 토핑을 추가할 경우
-                    $addtopping.style.display = 'block';
+            const menu = item.querySelector('span').textContent;
+            const price = parseFloat(item.getAttribute('data-price'));
+            
+            const addToOrder = confirm(`주문 목록에 ${menu}를 담으시겠습니까?`);
+            if (addToOrder) {
+                const existingInput = document.querySelector(`input[name="${menu}`);
+                const quantityInput = existingInput ? existingInput.nextElementSibling : null;
+    
+                if (quantityInput) {
+                    quantityInput.value = parseInt(quantityInput.value) + 1;
                 } else {
-                    // 토핑을 추가하지 않을 경우
+                    const orderItem = document.createElement('input');
+                    const quantityItem = document.createElement('input');
+    
+                    orderItem.type = quantityItem.type = 'text';
+                    orderItem.name = quantityItem.name = menu;
+                    orderItem.value = `${menu}`;
+                    quantityItem.value = 1;
+                    quantityItem.min = 1;
+    
+                    orderItem.readOnly = quantityItem.readOnly = true;
+    
+                    $orderMenu.appendChild(orderItem);
+                    $orderMenu.appendChild(quantityItem);
                 }
             }
         });
     });
 
-    $specialMenu.forEach(function(item) {
+    pizzaMenu.forEach(function(item) {
         item.addEventListener('click', function() {
-            if (!confirm('주문 목록에 담으시겠습니까?')) {
-                // 사용자가 주문 목록에 담지 않을 경우
-            } else {
-                if (confirm('토핑을 추가하시겠습니까?')) {
-                    // 토핑을 추가할 경우
-                    $addtopping.style.display = 'block';
-                } else {
-                    // 토핑을 추가하지 않을 경우
+            const menu = item.querySelector('span').textContent;
+            const price = parseFloat(item.getAttribute('data-price'));
+            
+            const addToOrder = confirm(`주문 목록에 ${menu}를 담으시겠습니까?`);
+            const addToTopping = confirm('토핑을 추가하시겠습니까?')
+            
+            if (addToOrder) {
+                if(addToTopping) {
+                    $addtopping.style.display = 'block'
+                } else{
+                    const existingInput = document.querySelector(`input[name="${menu}`);
+                    const quantityInput = existingInput ? existingInput.nextElementSibling : null;
+        
+                    if (quantityInput) {
+                        quantityInput.value = parseInt(quantityInput.value) + 1;
+                    } else {
+                        const orderItem = document.createElement('input');
+                        const quantityItem = document.createElement('input');
+        
+                        orderItem.type = quantityItem.type = 'text';
+                        orderItem.name = quantityItem.name = menu;
+                        orderItem.value = `${menu}`;
+                        quantityItem.value = 1;
+                        quantityItem.min = 1;
+        
+                        orderItem.readOnly = quantityItem.readOnly = true;
+        
+                        $orderMenu.appendChild(orderItem);
+                        $orderMenu.appendChild(quantityItem);
+                    }
                 }
+            } else {
+                return false;
             }
         });
     });
+
+    const $orderMenu = document.getElementById('orderMenu')
 }
 
 
