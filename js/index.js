@@ -94,7 +94,7 @@ window.onload = function() {
     pizzaMenu.forEach(function(item) {
         item.addEventListener('click', function() {
             const menu = item.querySelector('span').textContent;
-            const price = parseFloat(item.getAttribute('data-price'));
+            const price = Number(item.getAttribute('data-price'));
             
             const addToOrder = confirm(`주문 목록에 ${menu}를 담으시겠습니까?`);
             const addToTopping = confirm('토핑을 추가하시겠습니까?')
@@ -104,19 +104,23 @@ window.onload = function() {
                     $addtopping.style.display = 'block'
                 } else{
                     const existingInput = document.querySelector(`input[name="${menu}`);
+                    const priceInput = document.querySelector(`input[name="${price}`);
                     const quantityInput = existingInput ? existingInput.nextElementSibling : null;
-        
                     if (quantityInput) {
                         quantityInput.value = parseInt(quantityInput.value) + 1;
+                        priceInput.value = parseInt(price) + price;
+                        
                     } else {
                         const orderItem = document.createElement('input');
                         const quantityItem = document.createElement('input');
+                        const pirceItem = document.createElement('input');
         
-                        orderItem.type = quantityItem.type = 'text';
-                        orderItem.name = quantityItem.name = menu;
+                        orderItem.type = quantityItem.type = pirceItem.type = 'text';
+                        orderItem.name = quantityItem.name = pirceItem.type = menu;
                         orderItem.value = `${menu}`;
                         quantityItem.value = 1;
                         quantityItem.min = 1;
+                        pirceItem.value = price;
         
                         orderItem.readOnly = quantityItem.readOnly = true;
         
