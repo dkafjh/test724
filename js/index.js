@@ -3,11 +3,13 @@ window.onload = function() {
     const modalText = document.querySelector('#howeat'); // 모달 창의 텍스트 요소
     const modal = document.querySelector('#modal');
     const calculateButton = document.querySelector('#total button');
+    const $main = document.querySelector('main'); 
     
     selectBtns.forEach(function(button) {
         button.addEventListener('click', function() {
             const buttonText = button.textContent;
             this.parentNode.classList.add('none');
+            $main.style.overflow = 'auto'
             modalText.innerHTML = `<h3> ${buttonText} </h3>`;
         });
     });
@@ -16,6 +18,8 @@ window.onload = function() {
         if (modalText.textContent === '') {
             alert('구매를 완료한 후에 눌러주세요!');
         } else {
+            const eatList = document.querySelector('#eat-list')
+            eatList.after($orderMenu)
             modal.style.display = 'block';
         }
     });

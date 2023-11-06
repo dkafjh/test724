@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/index.css">
     <script src="./js/index.js"></script>
+    <script src="./js/addmenu.js"></script>
     <title>피자스쿨 키오스크</title>
 </head>
 <body>
@@ -16,14 +17,16 @@
     </div>
 
     <header>
-        <h1 class="logo"><img src="./images/logo.png" alt="logo">피자스쿨</h1>
-        <nav>
-            <ul class="gnb">
-                <li><a href="#" id="classicMenuBtn">클래식메뉴</a></li>
-                <li><a href="#" id="specialMenuBtn">스페셜메뉴</a></li>
-                <li><a href="#" id="sideMenuBtn">사이드메뉴</a></li>
-            </ul>
-        </nav>
+        <div class="wrapper">
+            <h1 class="logo"><img src="./images/logo.png" alt="logo">피자스쿨</h1>
+            <nav>
+                <ul class="gnb">
+                    <li><a href="#" id="classicMenuBtn">클래식메뉴</a></li>
+                    <li><a href="#" id="specialMenuBtn">스페셜메뉴</a></li>
+                    <li><a href="#" id="sideMenuBtn">사이드메뉴</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -77,16 +80,6 @@
                     <li><img src="./images/고구마무스_2 (1).jpg" alt=""><span>고구마무스</span></li>
                     <li><img src="./images/치즈토핑 (1).jpg" alt=""><span>치즈토핑</span></li>
                 </ul>
-                <form action="post" name="toppings" class="toppingsgi">
-                    <fieldset>
-                        <legend>토핑추가</legend>
-                        <div>
-                            <label for="pizza">치즈피자</label>
-                            <input type="number">
-                        </div>
-                            <input type="button" value="확인">
-                    </fieldset>
-                </form>
             </div>
         </section>
 
@@ -103,10 +96,9 @@
         <div id="cal">
             <h2>주문내역</h2>
             <p id="howeat"></p>
-            <form>
-                <input type="text" name="money">
-                <input type="button" value="계산하기">
+            <form id="eat-list">
             </form>
+            <input type="button" value="계산하기">
             <button class="close-btn">X</button>
         </div>
     </div>
